@@ -7,7 +7,7 @@ VERSION='v1.3.25 (2026.09.18)'
 GITHUB_PROXY=('https://hub.glowp.xyz/' 'https://proxy.vvvv.ee/')
 
 # 各变量默认值
-TEMP_DIR='/tmp/sing-box'
+TEMP_DIR="${SING_BOX_TEMP_DIR:-$PWD/.tmp-sing-box}"
 WORK_DIR='/etc/sing-box'
 FIREWALL_STATE_DIR="${WORK_DIR}/firewall"
 SERVICE_FIREWALL_STATE_FILE="${FIREWALL_STATE_DIR}/service_ports.list"
