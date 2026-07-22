@@ -27,10 +27,10 @@ jobs:
 
           git fetch upstream
 
-          git checkout main
+          git checkout -B main origin/main
           git reset --hard upstream/main
           git push --force origin main
 
-          git checkout custom
+          git checkout -B custom origin/custom
           git rebase upstream/main
           git push --force-with-lease origin custom
