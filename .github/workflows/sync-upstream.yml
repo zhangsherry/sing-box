@@ -23,12 +23,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git remote add upstream https://github.com/fscarmen/sing-box.git
+          git remote add upstream https://github.com/fscarmen/sing-box.git || true
 
           git fetch upstream
 
           git checkout main
+          git reset --hard upstream/main
+          git push --force origin main
 
-          git merge upstream/main --no-edit
-
-          git push origin main
+          git checkout custom
+          git rebase upstream/main
+          git push --force-with-lease origin custom
